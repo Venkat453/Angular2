@@ -1,0 +1,13 @@
+<div style="margin-top: 50px;">
+  <h3>Top Heroes</h3>
+  <div class="dash-style">
+    <div class="grid grid-pad">
+      <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <div class="module hero">
+          <h4>{{hero.name}}</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

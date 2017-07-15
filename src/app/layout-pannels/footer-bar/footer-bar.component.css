@@ -1,0 +1,12 @@
+.navbar-inverse{
+    background-color: #2e353d !important;
+}
+.container-fluid p{
+    margin-top:1%;
+    text-align: left;
+    color: cornsilk;
+    float: left;
+}
+nav{
+    float: right;
+}

@@ -1,0 +1,35 @@
+.navbar-header i{
+    color: white;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 15px;
+}
+.navbar-header .title-style{
+    line-height: 40px;
+    display: block;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 6px;
+    padding-left: 20px;
+    text-shadow: 2px 2px red;
+    -webkit-text-fill-color: darkgrey;
+}
+.container-fluid{
+    float: left;
+    padding-right: 100px;
+}
+.navbar-inverse{
+    background-color: #2e353d !important;
+}
+.navbar navbar-inverse navbar-fixed-top{
+    border: 1px solid;
+    border-color: #020202;
+    border-left-color: #353b42;
+}
+.routing-style{
+    /*margin-left: 250px; for side bar*/
+    margin-top: 50px;
+}
+
