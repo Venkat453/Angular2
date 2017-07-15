@@ -17,13 +17,15 @@ import { TestComponent }        from './test/test.component';
 
 import { HeroService }          from './service/hero.service';
 import { ProductService }       from './service/product.service';
+import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
+import { FormModelDrivenComponent } from './form-model-driven/form-model-driven.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent, DashboardComponent, HeroesComponent, HerodetailComponent,
-    ProductComponent, TestComponent, NavBarComponent, SideBarComponent, FooterBarComponent
+    ProductComponent, TestComponent, NavBarComponent, SideBarComponent, FooterBarComponent, FormTemplateDrivenComponent, FormModelDrivenComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpModule,
