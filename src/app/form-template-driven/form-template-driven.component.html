@@ -1,3 +1,33 @@
-<p>
-  form-template-driven works!
-</p>
+<div>
+  <div class="container">
+    <h2>User Details..</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+      <div class="form-group">
+        <label for="name" class="control-label col-md-3">Name:</label>
+        <input type="text" class="form-control col-md-9" id="name" required [(ngModel)]="user.name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="email" class="control-label col-md-3">Email:</label>
+        <input type="text" class="form-control col-md-9" id="email" required [(ngModel)]="user.email" name="email">
+      </div>
+<!-- bind the model group use "ngModelGroup" in seperate div as a class and put street,city and postalcode in that div -->
+      <div class="form-group">
+        <label for="street" class="control-label col-md-3">Street:</label>
+        <input type="text" class="form-control col-md-9" id="street" required [(ngModel)]="user.street" name="street">
+      </div>
+      <div class="form-group">
+        <label for="city" class="control-label col-md-3">City:</label>
+        <input type="text" class="form-control  col-md-9" id="city" required [(ngModel)]="user.city" name="city">
+      </div>
+      <div class="form-group">
+        <label for="postalcode" class="control-label col-md-3">Postal Code:</label>
+        <input type="text" class="form-control col-md-9" id="postalcode" required [(ngModel)]="user.postalcode" name="postalcode">
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+          <button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

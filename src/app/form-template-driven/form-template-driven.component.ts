@@ -11,5 +11,7 @@ export class FormTemplateDrivenComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(userDetails:any){
+    console.log(userDetails);
+  }
 }
