@@ -4,6 +4,19 @@
 <div>
   <select [(ngModel)]="country_data">
     <option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
-  </select>
-  {{country_data}}
+  </select> {{country_data}}
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="countryMenu" data-toggle="dropdown">
+      {{selected_country}} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="countryMenu">
+    <li role="presentation" *ngFor="let country of countries" >
+      <a role="menuitem" tabindex="-1" (click)="selectedCountry(country)">{{country.name}}</a>
+    </li>
+  </ul>
+</div>
+<div *ngIf="flag">
+  {{selected_country}}
 </div>

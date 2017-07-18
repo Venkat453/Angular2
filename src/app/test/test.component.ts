@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   title = 'Test Page';
-  selected_country ="";
+  selected_country ="Select Country";
+  flag: any ="";
   countries: any = [
     {'id':1, 'name':"India"},
     {'id':2, 'name':"USA"},
@@ -24,7 +25,7 @@ export class TestComponent implements OnInit {
     
   }
   selectedCountry(country){
-    alert("hai");
+    this.flag=country.name;
     this.selected_country = country.name;
   }
   
