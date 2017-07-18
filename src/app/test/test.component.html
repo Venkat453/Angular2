@@ -1,3 +1,9 @@
 <div style="margin-top: 50px;">
   <h3>{{title}}</h3>
 </div>
+<div>
+  <select [(ngModel)]="country_data">
+    <option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
+  </select>
+  {{country_data}}
+</div>
