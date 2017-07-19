@@ -40,7 +40,7 @@
                     Add Products
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" #ProductsForm="ngForm" (ngSubmit)="addProducts(products)">
+                    <form class="form-horizontal" #ProductsForm="ngForm" (ngSubmit)="addProducts(ProductsForm.value)">
                         <div class="form-group">
                             <label class="control-label col-md-3" for="product_code">Product Code</label>
                             <div class="col-md-9">

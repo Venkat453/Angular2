@@ -16,7 +16,7 @@
           <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
         </div>
       </div>
-      <!-- bind the model group use "ngModelGroup" in seperate div as a class and put street,city and postalcode in that div -->
+      <!-- bind the model group use "ngModelGroup" in seperate div(  <div ngModelGroup="address"></div>  ) as a class and put street,city and postalcode in that div -->
       <div class="form-group">
         <label for="street" class="control-label col-md-3">Street:</label>
         <div class="col-md-6">

@@ -30,12 +30,14 @@ export class ProductComponent implements OnInit {
   }
 
   addProducts(productdetails) {
+    productdetails.id=0;
     this.products = productdetails;
     console.log(this.products);
     this.productService.sendProducts(this.products)
       .subscribe(
             data => {
               console.log(data);
+              this.products ={};
               this.ProductsForm.reset();
               this.getProducts();
             },
