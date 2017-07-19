@@ -29,15 +29,14 @@ export class ProductComponent implements OnInit {
                         );
   }
 
-  addProducts() {
-    // form: NgForm
-    this.products = this.ProductsForm.value;
+  addProducts(productdetails) {
+    this.products = productdetails;
     console.log(this.products);
     this.productService.sendProducts(this.products)
       .subscribe(
             data => {
               console.log(data);
-              this.ProductsForm.reset;
+              this.ProductsForm.reset();
               this.getProducts();
             },
             error =>{console.error(error)}
@@ -46,15 +45,6 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.getProducts();
-    // this.ProductsForm = new FormGroup({
-    //   'product_code'    : new FormControl('',Validators.required),
-    //   'product_name'    : new FormControl('',Validators.required),
-    //   'product_info'    : new FormControl('',Validators.required),
-    //   'product_price'   : new FormControl('',Validators.required),
-    //   'product_quantity': new FormControl('',Validators.required),
-    //   'product_barcode'  : new FormControl('',Validators.required),
-    // });
-    
   }
 
 }
