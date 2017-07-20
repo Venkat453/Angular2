@@ -14,35 +14,45 @@ export class ProductComponent implements OnInit {
   title = 'Product Details';
   errorMessage: string;
   iproducts: IProduct[];
-  prdts:IProduct[];
-  ProductsForm: FormGroup;
+  prdts: IProduct[];
+  flag:any= true;
+
 
   products = {};
-  
+
   constructor(private productService: ProductService) { }
 
-  getProducts(){
+  ProductsForm: FormGroup;
+
+  getProducts() {
     this.productService.getProducts()
-                        .subscribe(
-                          productsList => this.iproducts = productsList,
-                          errorMsg => this.errorMessage = <any>errorMsg
-                        );
+      .subscribe(
+      productsList => this.iproducts = productsList,
+      errorMsg => this.errorMessage = <any>errorMsg
+      );
   }
 
   addProducts(productdetails) {
-    productdetails.id=0;
+    productdetails.id = 0;
     this.products = productdetails;
-    console.log(this.products);
-    this.productService.sendProducts(this.products)
-      .subscribe(
-            data => {
-              console.log(data);
-              this.products ={};
-              this.ProductsForm.reset();
-              this.getProducts();
-            },
-            error =>{console.error(error)}
-      );
+    // console.log(this.products);
+    // console.log(Object.keys(this.products).length);
+
+    if (Object.keys(this.products).length > 0) {
+      this.productService.sendProducts(this.products)
+        .subscribe(
+        data => {
+          console.log(data);
+          this.products = {};
+          // this.ProductsForm.reset();
+          this.getProducts();
+        },
+        error => { console.error(error) }
+        );
+    }
+    else {
+      console.log("there is no form data");
+    }
   }
 
   ngOnInit() {
