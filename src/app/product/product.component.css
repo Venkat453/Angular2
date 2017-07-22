@@ -16,7 +16,21 @@ input.ng-dirty.ng-valid{
   background-color: #8db9ce;
   font-weight: 700;
 }
-
+table{
+ height:333px;
+ width: 100%; 
+}
+tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+tbody{
+  overflow-y:scroll;
+  height: 300px;
+  width: 94%;
+  position:absolute;
+}
 
 /*input .ng-pristine,.ng-untouched {
   border-left: default;

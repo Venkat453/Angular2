@@ -8,25 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   title = 'Test Page';
-  selected_country ="Select Country";
-  flag: any ="";
+  selected_country = "Select Country";
+  flag: any = "";
+  dummy: any;
   countries: any = [
-    {'id':1, 'name':"India"},
-    {'id':2, 'name':"USA"},
-    {'id':3, 'name':"China"},
-    {'id':4, 'name':"Japan"},
-    {'id':5, 'name':"Russia"},
-    {'id':6, 'name':"France"}
+    { 'id': 1, 'name': "India" },
+    { 'id': 2, 'name': "USA" },
+    { 'id': 3, 'name': "China" },
+    { 'id': 4, 'name': "Japan" },
+    { 'id': 5, 'name': "Russia" },
+    { 'id': 6, 'name': "France" }
   ];
 
   constructor() { }
 
   ngOnInit() {
-    
+
   }
-  selectedCountry(country){
-    this.flag=country.name;
+  selectedCountry(country) {
+    this.flag = country.name;
     this.selected_country = country.name;
+    // this.dummy = Object.keys(this.countries[0]);
+    // console.log(this.dummy);
   }
-  
+
 }

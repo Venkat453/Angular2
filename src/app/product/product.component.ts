@@ -5,6 +5,7 @@ import { Observable } from "rxjs/Observable";
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { IProduct } from "app/service/product";
 import { ProductService } from 'app/service/product.service';
+
 @Component({
   // selector: 'product-root',
   templateUrl: './product.component.html',
@@ -19,8 +20,19 @@ export class ProductComponent implements OnInit {
 
 
   products = {};
+    // 'product_code'      : "",
+    // 'product_name'      : "",
+    // 'product_info'      : "",
+    // 'product_quantity'  : 0,
+    // 'product_price'     : 0,
+    // 'product_barcode'   : ""
+  
 
   constructor(private productService: ProductService) { }
+
+  ngOnInit() {
+    this.getProducts();
+  }
 
   ProductsForm: FormGroup;
 
@@ -55,8 +67,10 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.getProducts();
+  updateProduct(UpdateProduct){
+    this.products = UpdateProduct;
+    console.log(UpdateProduct);
   }
+  
 
 }

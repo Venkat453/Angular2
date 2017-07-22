@@ -18,13 +18,13 @@ export class ProductService {
 
     getProducts(){
 
-        // const headers = new Headers();
-        // headers.append('Content-Type', 'application/json')
-        // headers.append('Access-Control-Allow-Headers', 'Content-Type');
-        // headers.append('Access-Control-Allow-Methods', 'GET');
-        // headers.append('Access-Control-Allow-Origin', '*');
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json')
+        headers.append('Access-Control-Allow-Headers', 'Content-Type');
+        headers.append('Access-Control-Allow-Methods', 'GET');
+        headers.append('Access-Control-Allow-Origin', '*');
 
-        // let options = new RequestOptions({ headers: headers });
+        let options = new RequestOptions({ headers: headers });
 
         return this.http.get(this.Getproducturl)
                         .map(this.extractData)

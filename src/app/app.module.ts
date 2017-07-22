@@ -35,4 +35,4 @@ import { ProductService }                     from './service/product.service';
   bootstrap: [AppComponent, ProductComponent],
   providers: [HeroService, ProductService]
 })
-export class AppModule { }
+export class AppModule { } 
